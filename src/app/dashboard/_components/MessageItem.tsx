@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/tooltip";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 
@@ -54,7 +53,6 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
             <Markdown
               className="leading-relaxed"
               remarkPlugins={[remarkGfm, remarkMath]}
-              rehypePlugins={[rehypeKatex]}
             >
               {message.content}
             </Markdown>
