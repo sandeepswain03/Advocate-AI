@@ -7,9 +7,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 
 interface MessageItemProps {
@@ -50,12 +47,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
                 : "bg-zinc-800 backdrop-blur-sm text-white"
             }`}
           >
-            <Markdown
-              className="leading-relaxed"
-              remarkPlugins={[remarkGfm, remarkMath]}
-            >
-              {message.content}
-            </Markdown>
+            {message.content}
           </div>
           {message.role === "assistant" && (
             <div className="flex gap-2">
